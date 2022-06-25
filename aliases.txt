@@ -1,6 +1,12 @@
 alias rm=rmtrash
 alias rmdir=rmdirtrash
+
 alias ls='ls -a'
+alias ..='cd ..'
+alias grep='grep --color=auto'
+
 alias gedit='gedit --new-window'
+
 alias whereami=pwd
+
 alias fucking=sudo
