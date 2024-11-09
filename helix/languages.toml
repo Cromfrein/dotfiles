@@ -1,0 +1,13 @@
+[[language]]
+name = "nix"
+auto-format = true
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "rust"
+auto-format = true
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "cpp"
+indent = { tab-width = 4, unit = "\t" }
