@@ -1,38 +1,87 @@
 # Behavior
 add_newline = false
 
+palette = "catppuccin_mocha"
+
+format = """
+[](Surface2)\
+$os\
+[](fg:Surface2 bg:Overlay1)\
+$directory\
+[](fg:Overlay1 bg:Overlay2)\
+[](Overlay2)\
+$fill\
+$nix_shell\
+\n$character"""
+
+#right_format = """$cmd_duration"""
+
+[os]
+style = "bg:Surface2 fg:Sapphire"
+disabled = false
+
+[directory]
+style = "bg:Overlay1"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[fill]
+symbol = ' '
+
+[cmd_duration]
+min_time = 5_000
+
+# unsorted
+[nix_shell]
+format = '''
+[](Surface0)[via ]($style)[$symbol$state( \($name\))]($style)[](Surface0)'''
+
+symbol = '󱄅 '#'❄️'
+style = 'bg:Surface0 fg:Sapphire'
+impure_msg = 'impure' 
+pure_msg = 'pure'
+unknown_msg = ''
+
+[username]
+show_always = true
+style_user = "bg:#9A348E"
+style_root = "bg:#9A348E"
+format = '[$user ]($style)'
+disabled = false
+
 [line_break]
 disabled = true
 
 # Direct Prompt Changes
 [character]
-success_symbol = '[>](bold green)'
+success_symbol = '[>](#11d116)'
 error_symbol = '[>](bold red)'
 
 [directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
-"Workspace" = "󰍹 "
+"Documents" = "󰈙"
+"Downloads" = ""
+"Music" = ""
+"Pictures" = ""
+"Workspace" = "󰍹"
 
 [c]
-symbol = " "
+symbol = ""
 #style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]'#'($style)'
+format = '[ $symbol ($version) ]($style)'
 
 [docker_context]
-symbol = " "
+symbol = ""
 #style = "bg:#06969A"
 format = '[ $symbol $context ]'#($style)'
 
 [elixir]
-symbol = " "
+symbol = ""
 #style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]'#'($style)'
 
 [elm]
-symbol = " "
+symbol = ""
 #style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]'#'($style)'
 
@@ -46,7 +95,7 @@ format = '[ $symbol $branch ]'#'($style)'
 format = '[$all_status$ahead_behind ]'#'($style)'
 
 [golang]
-symbol = " "
+symbol = ""
 #style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]'#'($style)'
 
@@ -55,17 +104,17 @@ format = '[ $symbol ($version) ]'#'($style)'
 format = '[ $symbol ($version) ]'#'($style)'
 
 [haskell]
-symbol = " "
+symbol = ""
 #style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]'#'($style)'
 
 [java]
-symbol = " "
+symbol = ""
 #style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]'#'($style)'
 
 [julia]
-symbol = " "
+symbol = ""
 #style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]'#'($style)'
 
@@ -75,7 +124,7 @@ symbol = ""
 format = '[ $symbol ($version) ]'#'($style)'
 
 [nim]
-symbol = "󰆥 "
+symbol = "󰆥"
 #style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]'#'($style)'
 
@@ -85,6 +134,83 @@ symbol = ""
 format = '[ $symbol ($version) ]'#'($style)'
 
 [scala]
-symbol = " "
+symbol = ""
 #style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]'#'($style)'
+
+[os.symbols]
+AIX = "➿"
+Alpaquita = "🔔"
+AlmaLinux = "💠"
+Alpine = "🏔️"
+Amazon = "🙂"
+Android = "🤖"
+Arch = "🎗️"
+Artix = "🎗️"
+CentOS = "💠"
+Debian = "🌀"
+DragonFly = "🐉"
+Emscripten = "🔗"
+EndeavourOS = "🚀"
+Fedora = "🎩"
+FreeBSD = "😈"
+Garuda = "🦅"
+Gentoo = "🗜️"
+HardenedBSD = "🛡️"
+Illumos = "🐦"
+Kali = "🐉"
+Linux = "🐧"
+Mabox = "📦"
+Macos = "🍎"
+Manjaro = "🥭"
+Mariner = "🌊"
+MidnightBSD = "🌘"
+Mint = "🌿"
+NetBSD = "🚩"
+NixOS = "󱄅"#"❄️"
+OpenBSD = "🐡"
+OpenCloudOS = "☁️"
+openEuler = "🦉"
+openSUSE = "🦎"
+OracleLinux = "🦴"
+Pop = "🍭"
+Raspbian = "🍓"
+Redhat = "🎩"
+RedHatEnterprise = "🎩"
+RockyLinux = "💠"
+Redox = "🧪"
+Solus = "⛵"
+SUSE = "🦎"
+Ubuntu = "🎯"
+Ultramarine = "🔷"
+Unknown = "❓"
+Void = ""
+Windows = "🪟"
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
